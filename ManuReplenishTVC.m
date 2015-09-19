@@ -11,11 +11,15 @@
 #import "IngreCategoryPickerCell.h"
 #import "PickerCell.h"
 #import "IngredientPickerCell.h"
+#import "Parse/Parse.h"
 
 @interface ManuReplenishTVC () <PickerCell>
 @property (strong, nonatomic) IngreCategory *ingreCategory;
 @property (strong, nonatomic) NSString *categorySelected;
 @property (strong, nonatomic) NSString *ingredientSelected;
+@property (strong, nonatomic) NSString *ingredientSelectedID;
+@property (weak, nonatomic) IBOutlet UITextField *priceTextField;
+@property (weak, nonatomic) IBOutlet UITextField *numberTextField;
 
 @property (weak, nonatomic) IBOutlet IngreCategoryPickerCell *categoryCell;
 @property (weak, nonatomic) IBOutlet IngredientPickerCell *ingredientCell;
@@ -58,7 +62,7 @@
 //    NSLog(@"%@", self.categorySelected);
 }
 
-- (void)update:(NSString *)target By:(UITableViewCell *)cell
+- (void)update:(NSString *)target By:(UITableViewCell *)cell AtRow:(NSInteger)row
 {
     if ([target isEqualToString:@"category"]) {
         IngreCategoryPickerCell *myCell = (IngreCategoryPickerCell *)cell;
@@ -68,6 +72,8 @@
         
         IngredientPickerCell *myCell = (IngredientPickerCell *)cell;
         self.ingredientSelected = myCell.IngredientTextfield.text;
+        self.ingredientSelectedID = myCell.ingredientID;
+
         NSLog(@"Selected ingredient: %@", self.ingredientSelected);
     }
 }
@@ -144,5 +150,29 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - actions
+
+- (IBAction)submitButton:(UIButton *)sender {
+    NSLog(@"Category: %@, Ingredient ID: %@, Price: %@, Number: %@", self.categorySelected, self.ingredientSelectedID, self.priceTextField.text, self.numberTextField.text);
+    
+    PFObject *RawIngredient = [PFObject objectWithClassName:@"RawIngredient"];
+    RawIngredient[@"category"] = self.categorySelected;
+    RawIngredient[@"name"] = self.ingredientSelected;
+    
+    PFObject *pointer = [PFObject objectWithoutDataWithClassName:@"Ingredient" objectId:self.ingredientSelectedID];
+    RawIngredient[@"ingredient"] = pointer;
+    RawIngredient[@"quantity"] = @([self.numberTextField.text integerValue]);
+    
+    [RawIngredient saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+            NSLog(@"Saving to Parse successfully");
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+}
+
 
 @end

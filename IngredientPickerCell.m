@@ -10,6 +10,7 @@
 #import "Parse/Parse.h"
 
 @interface IngredientPickerCell() <UIPickerViewDataSource, UIPickerViewDelegate>
+@property (strong, nonatomic) NSMutableArray *ingredientOptions;
 @property (strong, nonatomic) NSMutableArray *pickerOptions;
 @property (strong, nonatomic) UIPickerView *picker;
 @end
@@ -18,9 +19,11 @@
 
 - (void)awakeFromNib {
     self.IngredientTextfield.inputView = self.picker;
+    self.ingredientOptions = [[NSMutableArray alloc] init];
 }
 
 #pragma mark - setter & getter
+
 
 - (NSMutableArray *)pickerOptions
 {
@@ -31,10 +34,15 @@
         [query whereKey:@"category" equalTo: self.category];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
-                // The find succeeded.
                 
+                // The find succeeded.
                 for (PFObject *object in objects) {
-                    [_pickerOptions addObject: object[@"name"]];
+                    [_ingredientOptions addObject: @{@"name" : object[@"name"],
+                                                       @"id" : object.objectId } ];
+                }
+                
+                for (NSDictionary *ingredient in self.ingredientOptions) {
+                    [_pickerOptions addObject: ingredient[@"name"]];
                 }
                 [self.picker reloadAllComponents];
                 
@@ -43,7 +51,11 @@
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
         }];
+        
+        
+        
     }
+    
     return _pickerOptions;
 }
 
@@ -77,9 +89,10 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     self.IngredientTextfield.text = self.pickerOptions[row];
+    self.ingredientID = self.ingredientOptions[row][@"id"];
     [self.IngredientTextfield resignFirstResponder];
 
-    [self.delegate update:@"ingredient" By:self];
+    [self.delegate update:@"ingredient" By:self AtRow:row];
 }
 
 
@@ -87,7 +100,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 @end

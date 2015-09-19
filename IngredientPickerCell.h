@@ -14,4 +14,5 @@
 
 @property (weak, nonatomic) id <PickerCell> delegate;
 @property (strong, nonatomic) IBOutlet UITextField *IngredientTextfield;
+@property (strong, nonatomic) NSString *ingredientID;
 @end

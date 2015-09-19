@@ -12,7 +12,7 @@
 @protocol PickerCell <NSObject>
 
 @required
-- (void)update:(NSString *)target By:(UITableViewCell *)cell;
+- (void)update:(NSString *)target By:(UITableViewCell *)cell AtRow:(NSInteger)row;
 
 
 @end
