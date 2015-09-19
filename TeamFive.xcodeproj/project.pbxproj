@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22165A251BAD59DF000C74CF /* ManuReplenishTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 22165A241BAD59DF000C74CF /* ManuReplenishTVC.m */; };
+		22165A281BAD5A3B000C74CF /* IngreCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 22165A271BAD5A3B000C74CF /* IngreCategory.m */; };
 		5543FC98214540D30B478096 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19154AB5A12BB5DD02A3B326 /* libPods.a */; };
 		841690C21BAD2E3F00869DAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690C11BAD2E3F00869DAA /* main.m */; };
 		841690C51BAD2E3F00869DAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690C41BAD2E3F00869DAA /* AppDelegate.m */; };
@@ -19,7 +21,6 @@
 		841690EA1BAD301E00869DAA /* AddItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690E91BAD301E00869DAA /* AddItemTableViewController.m */; };
 		841690ED1BAD303100869DAA /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690EC1BAD303100869DAA /* SearchTableViewController.m */; };
 		841690F31BAD3FDE00869DAA /* SettingsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690F21BAD3FDE00869DAA /* SettingsCollectionViewController.m */; };
-		841690F61BAD407F00869DAA /* AddIngredientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690F51BAD407F00869DAA /* AddIngredientTableViewController.m */; };
 		841690F91BAD410900869DAA /* AddHandledIngredientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690F81BAD410900869DAA /* AddHandledIngredientTableViewController.m */; };
 		841690FC1BAD411900869DAA /* IngredientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690FB1BAD411900869DAA /* IngredientsTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,10 @@
 
 /* Begin PBXFileReference section */
 		19154AB5A12BB5DD02A3B326 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		22165A231BAD59DF000C74CF /* ManuReplenishTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManuReplenishTVC.h; sourceTree = "<group>"; };
+		22165A241BAD59DF000C74CF /* ManuReplenishTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManuReplenishTVC.m; sourceTree = "<group>"; };
+		22165A261BAD5A3B000C74CF /* IngreCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngreCategory.h; sourceTree = "<group>"; };
+		22165A271BAD5A3B000C74CF /* IngreCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngreCategory.m; sourceTree = "<group>"; };
 		3006F5988E993F2E77F12841 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		841690BC1BAD2E3F00869DAA /* TeamFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841690C01BAD2E3F00869DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,8 +62,6 @@
 		841690EC1BAD303100869DAA /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
 		841690F11BAD3FDE00869DAA /* SettingsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCollectionViewController.h; sourceTree = "<group>"; };
 		841690F21BAD3FDE00869DAA /* SettingsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsCollectionViewController.m; sourceTree = "<group>"; };
-		841690F41BAD407F00869DAA /* AddIngredientTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddIngredientTableViewController.h; path = ../../Movies/AddIngredientTableViewController.h; sourceTree = "<group>"; };
-		841690F51BAD407F00869DAA /* AddIngredientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddIngredientTableViewController.m; path = ../../Movies/AddIngredientTableViewController.m; sourceTree = "<group>"; };
 		841690F71BAD410900869DAA /* AddHandledIngredientTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddHandledIngredientTableViewController.h; sourceTree = "<group>"; };
 		841690F81BAD410900869DAA /* AddHandledIngredientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHandledIngredientTableViewController.m; sourceTree = "<group>"; };
 		841690FA1BAD411900869DAA /* IngredientsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientsTableViewController.h; sourceTree = "<group>"; };
@@ -96,12 +99,14 @@
 		841690B31BAD2E3F00869DAA = {
 			isa = PBXGroup;
 			children = (
+				22165A261BAD5A3B000C74CF /* IngreCategory.h */,
+				22165A271BAD5A3B000C74CF /* IngreCategory.m */,
+				22165A231BAD59DF000C74CF /* ManuReplenishTVC.h */,
+				22165A241BAD59DF000C74CF /* ManuReplenishTVC.m */,
 				841690FA1BAD411900869DAA /* IngredientsTableViewController.h */,
 				841690FB1BAD411900869DAA /* IngredientsTableViewController.m */,
 				841690F71BAD410900869DAA /* AddHandledIngredientTableViewController.h */,
 				841690F81BAD410900869DAA /* AddHandledIngredientTableViewController.m */,
-				841690F41BAD407F00869DAA /* AddIngredientTableViewController.h */,
-				841690F51BAD407F00869DAA /* AddIngredientTableViewController.m */,
 				841690F11BAD3FDE00869DAA /* SettingsCollectionViewController.h */,
 				841690F21BAD3FDE00869DAA /* SettingsCollectionViewController.m */,
 				841690EB1BAD303100869DAA /* SearchTableViewController.h */,
@@ -312,6 +317,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				841690C51BAD2E3F00869DAA /* AppDelegate.m in Sources */,
+				22165A281BAD5A3B000C74CF /* IngreCategory.m in Sources */,
+				22165A251BAD59DF000C74CF /* ManuReplenishTVC.m in Sources */,
 				841690C81BAD2E3F00869DAA /* TeamFive.xcdatamodeld in Sources */,
 				841690CB1BAD2E3F00869DAA /* ViewController.m in Sources */,
 				841690ED1BAD303100869DAA /* SearchTableViewController.m in Sources */,
@@ -320,7 +327,6 @@
 				841690F31BAD3FDE00869DAA /* SettingsCollectionViewController.m in Sources */,
 				841690C21BAD2E3F00869DAA /* main.m in Sources */,
 				841690EA1BAD301E00869DAA /* AddItemTableViewController.m in Sources */,
-				841690F61BAD407F00869DAA /* AddIngredientTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
