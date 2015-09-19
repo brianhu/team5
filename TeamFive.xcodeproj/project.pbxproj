@@ -23,6 +23,8 @@
 		841690F31BAD3FDE00869DAA /* SettingsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690F21BAD3FDE00869DAA /* SettingsCollectionViewController.m */; };
 		841690F91BAD410900869DAA /* AddHandledIngredientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690F81BAD410900869DAA /* AddHandledIngredientTableViewController.m */; };
 		841690FC1BAD411900869DAA /* IngredientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690FB1BAD411900869DAA /* IngredientsTableViewController.m */; };
+		C19A2EBA1BAD63F500873645 /* SettingsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C19A2EB81BAD63F500873645 /* SettingsCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		C19A2EBB1BAD63F500873645 /* SettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C19A2EB91BAD63F500873645 /* SettingsCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,9 @@
 		841690F81BAD410900869DAA /* AddHandledIngredientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHandledIngredientTableViewController.m; sourceTree = "<group>"; };
 		841690FA1BAD411900869DAA /* IngredientsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientsTableViewController.h; sourceTree = "<group>"; };
 		841690FB1BAD411900869DAA /* IngredientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientsTableViewController.m; sourceTree = "<group>"; };
+		C19A2EB71BAD63F500873645 /* SettingsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCollectionViewCell.h; sourceTree = "<group>"; };
+		C19A2EB81BAD63F500873645 /* SettingsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsCollectionViewCell.m; sourceTree = "<group>"; };
+		C19A2EB91BAD63F500873645 /* SettingsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsCollectionViewCell.xib; sourceTree = "<group>"; };
 		F60A475BF6682CF7481F4E20 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +114,9 @@
 				841690F81BAD410900869DAA /* AddHandledIngredientTableViewController.m */,
 				841690F11BAD3FDE00869DAA /* SettingsCollectionViewController.h */,
 				841690F21BAD3FDE00869DAA /* SettingsCollectionViewController.m */,
+				C19A2EB71BAD63F500873645 /* SettingsCollectionViewCell.h */,
+				C19A2EB81BAD63F500873645 /* SettingsCollectionViewCell.m */,
+				C19A2EB91BAD63F500873645 /* SettingsCollectionViewCell.xib */,
 				841690EB1BAD303100869DAA /* SearchTableViewController.h */,
 				841690EC1BAD303100869DAA /* SearchTableViewController.m */,
 				841690E81BAD301E00869DAA /* AddItemTableViewController.h */,
@@ -266,6 +274,7 @@
 				841690CE1BAD2E3F00869DAA /* Main.storyboard in Resources */,
 				841690D31BAD2E3F00869DAA /* LaunchScreen.xib in Resources */,
 				841690D01BAD2E3F00869DAA /* Images.xcassets in Resources */,
+				C19A2EBB1BAD63F500873645 /* SettingsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +330,7 @@
 				22165A251BAD59DF000C74CF /* ManuReplenishTVC.m in Sources */,
 				841690C81BAD2E3F00869DAA /* TeamFive.xcdatamodeld in Sources */,
 				841690CB1BAD2E3F00869DAA /* ViewController.m in Sources */,
+				C19A2EBA1BAD63F500873645 /* SettingsCollectionViewCell.m in Sources */,
 				841690ED1BAD303100869DAA /* SearchTableViewController.m in Sources */,
 				841690FC1BAD411900869DAA /* IngredientsTableViewController.m in Sources */,
 				841690F91BAD410900869DAA /* AddHandledIngredientTableViewController.m in Sources */,
