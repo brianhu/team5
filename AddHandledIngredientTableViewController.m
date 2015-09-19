@@ -7,7 +7,7 @@
 //
 
 #import "AddHandledIngredientTableViewController.h"
-
+#import <Parse/Parse.h>
 @interface AddHandledIngredientTableViewController ()
 {
     NSArray *addHandlesfoodArr;
@@ -55,8 +55,26 @@
     handledQuantityStr = self.handledQuantity.text;
     handledUnitStr = self.handledUnit.text;
     handledTimestr = self.handledTime.text;
-    addHandlesfoodArr = [[NSArray alloc]initWithObjects:handledfoodsStr,handledQuantityStr,handledUnitStr,handledTimestr, nil];
-    [allHandlesfoodArr addObject:addHandlesfoodArr];
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    f.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *foodQuantity = [f numberFromString:handledQuantityStr];
+    NSNumber *foodShelfLife = [f numberFromString:handledTimestr];
+    
+    
+    PFObject *handledIngredient = [PFObject objectWithClassName:@"HandledIngredient"];
+    handledIngredient[@"name"] = handledfoodsStr;
+    handledIngredient[@"shelfLife"] = foodShelfLife;
+    handledIngredient[@"quantity"] = foodQuantity;
+    [handledIngredient saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+
+    
+  
 }
 
 
