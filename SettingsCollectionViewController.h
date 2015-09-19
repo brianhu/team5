@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsCollectionViewCell.h"
 
-@interface SettingsCollectionViewController : UICollectionViewController
+@interface SettingsCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 
 @end
