@@ -206,6 +206,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Ljb-fY-yvm"/>
+                    <connections>
+                        <outlet property="view" destination="01x-db-goi" id="Pbv-Ao-JFB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGy-32-hlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

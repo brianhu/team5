@@ -13,10 +13,16 @@
 @end
 
 @implementation IngredientsTableViewController
+{
+    NSArray *Ingredients;
+    //NString *Dates;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    Ingredients = @[@"Tea", @"Baverage", @"Fruit", @"Jam", @"Bread", @"Snacks"];
+    //Dates = @[@"date"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -32,15 +38,26 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+    //#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+    //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [Ingredients count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:
+(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell.textLabel.text = [Ingredients objectAtIndex:indexPath.row];
+    return cell;
 }
 
 /*
