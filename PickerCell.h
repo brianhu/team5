@@ -12,6 +12,7 @@
 @protocol PickerCell <NSObject>
 
 @required
-- (void)updateCategoryChosen:(IngreCategoryPickerCell *)ingreCategoryCell;
+- (void)update:(NSString *)target By:(UITableViewCell *)cell;
+
 
 @end

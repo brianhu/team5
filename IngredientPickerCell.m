@@ -7,6 +7,7 @@
 //
 
 #import "IngredientPickerCell.h"
+#import "Parse/Parse.h"
 
 @interface IngredientPickerCell() <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (strong, nonatomic) NSMutableArray *pickerOptions;
@@ -24,9 +25,24 @@
 - (NSMutableArray *)pickerOptions
 {
     if (!_pickerOptions) {
-//        _pickerOptions = self.ingreCategory.totalCategory;
-        NSLog(@"%@", self.category);
-        _pickerOptions = @[self.category];
+        _pickerOptions = [[NSMutableArray alloc] init];
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"Ingredient"];
+        [query whereKey:@"category" equalTo: self.category];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+                
+                for (PFObject *object in objects) {
+                    [_pickerOptions addObject: object[@"name"]];
+                }
+                [self.picker reloadAllComponents];
+                
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
     }
     return _pickerOptions;
 }
@@ -60,9 +76,10 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-//    self.CategoryTextfield.text = self.pickerOptions[row][@"name"];
-//    [self.CategoryTextfield resignFirstResponder];
-//    [self.delegate updateCategoryChosen:self];
+    self.IngredientTextfield.text = self.pickerOptions[row];
+    [self.IngredientTextfield resignFirstResponder];
+
+    [self.delegate update:@"ingredient" By:self];
 }
 
 

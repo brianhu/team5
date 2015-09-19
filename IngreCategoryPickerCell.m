@@ -70,7 +70,8 @@
 {
     self.CategoryTextfield.text = self.pickerOptions[row][@"name"];
     [self.CategoryTextfield resignFirstResponder];
-    [self.delegate updateCategoryChosen:self];
+    
+    [self.delegate update:@"category" By:self];
 }
 
 #pragma mark - cell delegate

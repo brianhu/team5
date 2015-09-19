@@ -15,6 +15,7 @@
 @interface ManuReplenishTVC () <PickerCell>
 @property (strong, nonatomic) IngreCategory *ingreCategory;
 @property (strong, nonatomic) NSString *categorySelected;
+@property (strong, nonatomic) NSString *ingredientSelected;
 
 @property (weak, nonatomic) IBOutlet IngreCategoryPickerCell *categoryCell;
 @property (weak, nonatomic) IBOutlet IngredientPickerCell *ingredientCell;
@@ -26,6 +27,7 @@
     [super viewDidLoad];
     
     self.categoryCell.delegate = self;
+    self.ingredientCell.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +56,20 @@
 {
     self.categorySelected = ingreCategoryCell.CategoryTextfield.text;
 //    NSLog(@"%@", self.categorySelected);
+}
+
+- (void)update:(NSString *)target By:(UITableViewCell *)cell
+{
+    if ([target isEqualToString:@"category"]) {
+        IngreCategoryPickerCell *myCell = (IngreCategoryPickerCell *)cell;
+        self.categorySelected = myCell.CategoryTextfield.text;
+        
+    }else if ([target isEqualToString:@"ingredient"]) {
+        
+        IngredientPickerCell *myCell = (IngredientPickerCell *)cell;
+        self.ingredientSelected = myCell.IngredientTextfield.text;
+        NSLog(@"Selected ingredient: %@", self.ingredientSelected);
+    }
 }
 
 #pragma mark - Table view data source
