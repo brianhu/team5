@@ -76,10 +76,8 @@
             // There was a problem, check error.description
         }
     }];
+    
 
-  
-
-  
 }
 
 
