@@ -105,7 +105,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 */
 
-#pragma mark - UICollectionViewDelegateFlowLaout
+#pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize retval = CGSizeMake(160, 160);
