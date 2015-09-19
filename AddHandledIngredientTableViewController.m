@@ -9,14 +9,22 @@
 #import "AddHandledIngredientTableViewController.h"
 
 @interface AddHandledIngredientTableViewController ()
-
+{
+    NSArray *addHandlesfoodArr;
+    NSMutableArray *allHandlesfoodArr;
+    NSString *handledfoodsStr;
+    NSString *handledUnitStr;
+    NSString *handledQuantityStr;
+    NSString *handledTimestr;
+}
 @end
 
 @implementation AddHandledIngredientTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    addHandlesfoodArr = [[NSArray alloc] init];
+    allHandlesfoodArr = [[NSMutableArray alloc] init];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -32,16 +40,27 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+
+    return 4;
 }
+
+- (IBAction)addHandledFoodItems:(id)sender {
+    
+    handledfoodsStr = self.handledFoods.text;
+    handledQuantityStr = self.handledQuantity.text;
+    handledUnitStr = self.handledUnit.text;
+    handledTimestr = self.handledTime.text;
+    addHandlesfoodArr = [[NSArray alloc]initWithObjects:handledfoodsStr,handledQuantityStr,handledUnitStr,handledTimestr, nil];
+    [allHandlesfoodArr addObject:addHandlesfoodArr];
+}
+
+
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
