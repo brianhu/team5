@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSString *ingredientSelectedID;
 @property (weak, nonatomic) IBOutlet UITextField *priceTextField;
 @property (weak, nonatomic) IBOutlet UITextField *numberTextField;
+@property (weak, nonatomic) IBOutlet UILabel *unitLabel;
 
 @property (weak, nonatomic) IBOutlet IngreCategoryPickerCell *categoryCell;
 @property (weak, nonatomic) IBOutlet IngredientPickerCell *ingredientCell;
@@ -51,7 +52,6 @@
 - (void)setCategorySelected:(NSString *)categorySelected {
     _categorySelected = categorySelected;
     self.ingredientCell.category = categorySelected;
-    NSLog(@"%@", self.ingredientCell.category);
 }
 
 #pragma mark - picker
@@ -59,7 +59,6 @@
 - (void)updateCategoryChosen:(IngreCategoryPickerCell *)ingreCategoryCell
 {
     self.categorySelected = ingreCategoryCell.CategoryTextfield.text;
-//    NSLog(@"%@", self.categorySelected);
 }
 
 - (void)update:(NSString *)target By:(UITableViewCell *)cell AtRow:(NSInteger)row
@@ -68,13 +67,17 @@
         IngreCategoryPickerCell *myCell = (IngreCategoryPickerCell *)cell;
         self.categorySelected = myCell.CategoryTextfield.text;
         
-    }else if ([target isEqualToString:@"ingredient"]) {
+        for (NSDictionary *category in self.ingreCategory.totalCategory) {
+            if ([self.categorySelected isEqualToString:category[@"name"]]) {
+                self.unitLabel.text = category[@"unit"];
+            }
+        }
         
+    }else if ([target isEqualToString:@"ingredient"]) {
         IngredientPickerCell *myCell = (IngredientPickerCell *)cell;
         self.ingredientSelected = myCell.IngredientTextfield.text;
         self.ingredientSelectedID = myCell.ingredientID;
-
-        NSLog(@"Selected ingredient: %@", self.ingredientSelected);
+        
     }
 }
 
@@ -154,7 +157,6 @@
 #pragma mark - actions
 
 - (IBAction)submitButton:(UIButton *)sender {
-    NSLog(@"Category: %@, Ingredient ID: %@, Price: %@, Number: %@", self.categorySelected, self.ingredientSelectedID, self.priceTextField.text, self.numberTextField.text);
     
     PFObject *RawIngredient = [PFObject objectWithClassName:@"RawIngredient"];
     RawIngredient[@"category"] = self.categorySelected;
@@ -172,6 +174,11 @@
             // There was a problem, check error.description
         }
     }];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    [self.view endEditing:YES];
 }
 
 
