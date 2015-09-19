@@ -7,7 +7,7 @@
 //
 
 #import "AddItemTableViewController.h"
-
+#import <Parse/Parse.h>
 @interface AddItemTableViewController ()
 
 @end

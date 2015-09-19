@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5543FC98214540D30B478096 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19154AB5A12BB5DD02A3B326 /* libPods.a */; };
 		841690C21BAD2E3F00869DAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690C11BAD2E3F00869DAA /* main.m */; };
 		841690C51BAD2E3F00869DAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690C41BAD2E3F00869DAA /* AppDelegate.m */; };
 		841690C81BAD2E3F00869DAA /* TeamFive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 841690C61BAD2E3F00869DAA /* TeamFive.xcdatamodeld */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19154AB5A12BB5DD02A3B326 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3006F5988E993F2E77F12841 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		841690BC1BAD2E3F00869DAA /* TeamFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841690C01BAD2E3F00869DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841690C11BAD2E3F00869DAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		841690EC1BAD303100869DAA /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
 		841690EE1BAD307800869DAA /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		841690EF1BAD307800869DAA /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		F60A475BF6682CF7481F4E20 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5543FC98214540D30B478096 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EC9A6CE1E0F370045668EC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19154AB5A12BB5DD02A3B326 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		841690B31BAD2E3F00869DAA = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +96,8 @@
 				841690BE1BAD2E3F00869DAA /* TeamFive */,
 				841690DB1BAD2E3F00869DAA /* TeamFiveTests */,
 				841690BD1BAD2E3F00869DAA /* Products */,
+				F1672DC768FDABB96483896D /* Pods */,
+				0EC9A6CE1E0F370045668EC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +152,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F1672DC768FDABB96483896D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3006F5988E993F2E77F12841 /* Pods.debug.xcconfig */,
+				F60A475BF6682CF7481F4E20 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 841690E21BAD2E3F00869DAA /* Build configuration list for PBXNativeTarget "TeamFive" */;
 			buildPhases = (
+				D43D40A5BE64B4688AD93F21 /* Check Pods Manifest.lock */,
 				841690B81BAD2E3F00869DAA /* Sources */,
 				841690B91BAD2E3F00869DAA /* Frameworks */,
 				841690BA1BAD2E3F00869DAA /* Resources */,
+				528508BD93E5E14035270E72 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +257,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		528508BD93E5E14035270E72 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D43D40A5BE64B4688AD93F21 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		841690B81BAD2E3F00869DAA /* Sources */ = {
@@ -369,6 +428,7 @@
 		};
 		841690E31BAD2E3F00869DAA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3006F5988E993F2E77F12841 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TeamFive/Info.plist;
@@ -379,6 +439,7 @@
 		};
 		841690E41BAD2E3F00869DAA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F60A475BF6682CF7481F4E20 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TeamFive/Info.plist;
@@ -440,6 +501,7 @@
 				841690E41BAD2E3F00869DAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		841690E51BAD2E3F00869DAA /* Build configuration list for PBXNativeTarget "TeamFiveTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +510,7 @@
 				841690E71BAD2E3F00869DAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
