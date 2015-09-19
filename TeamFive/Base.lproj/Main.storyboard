@@ -335,19 +335,8 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="500" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rfK-1B-T31">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                        </imageView>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="rfK-1B-T31" secondAttribute="trailing" id="N59-Ta-xd4"/>
-                                    <constraint firstItem="rfK-1B-T31" firstAttribute="leading" secondItem="cth-sC-QbY" secondAttribute="leading" id="gK2-3b-PJU"/>
-                                    <constraint firstAttribute="bottom" secondItem="rfK-1B-T31" secondAttribute="bottom" id="ps1-yc-qKL"/>
-                                    <constraint firstItem="rfK-1B-T31" firstAttribute="top" secondItem="cth-sC-QbY" secondAttribute="top" id="qS6-Xv-MQ9"/>
-                                </constraints>
                                 <connections>
                                     <segue destination="zPc-mQ-tTY" kind="push" identifier="" id="NS4-6f-omy"/>
                                 </connections>

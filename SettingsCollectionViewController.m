@@ -21,7 +21,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     categoryImage = @[@"category_food.jpg", @"category_food.jpg", @"category_food.jpg", @"category_food.jpg", @"category_food.jpg", @"category_food.jpg"];
 
     // Uncomment the following line to preserve selection between presentations
@@ -64,6 +64,7 @@ static NSString * const reuseIdentifier = @"Cell";
     SettingsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
 
     cell.categoryImageViewCell.image = [UIImage imageNamed:[categoryImage objectAtIndex:indexPath.row]];
+//    cell.backgroundColor = [UIColor whiteColor];
 
     return cell;
 }
@@ -103,5 +104,27 @@ static NSString * const reuseIdentifier = @"Cell";
 	
 }
 */
+
+#pragma mark - UICollectionViewDelegateFlowLaout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGSize retval = CGSizeMake(160, 160);
+    return retval;
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    // Top, Left, Bottom, Right
+    return UIEdgeInsetsMake(0, 20, 0, 20);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    CGFloat interimSpacing = 0.0f;
+    return interimSpacing;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    CGFloat lineSpacing = 20.0f;
+    return lineSpacing;
+}
 
 @end
