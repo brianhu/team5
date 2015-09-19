@@ -28,6 +28,7 @@
 		BCB3D8682C9CC6A0ABF586E1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7914D675D126EA0814393205 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D3749C3E1BAD716400F4C4C6 /* ExpiringIngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3749C3D1BAD716400F4C4C6 /* ExpiringIngredientCell.xib */; };
 		D3749C441BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3749C431BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		841690FF1BAD6EB300869DAA /* AddIngredientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690FE1BAD6EB300869DAA /* AddIngredientTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		D3749C3D1BAD716400F4C4C6 /* ExpiringIngredientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpiringIngredientCell.xib; sourceTree = "<group>"; };
 		D3749C421BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpiringIngredientTableViewCell.h; sourceTree = "<group>"; };
 		D3749C431BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpiringIngredientTableViewCell.m; sourceTree = "<group>"; };
+		841690FD1BAD6EB300869DAA /* AddIngredientTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddIngredientTableViewController.h; path = ../../Movies/AddIngredientTableViewController.h; sourceTree = "<group>"; };
+		841690FE1BAD6EB300869DAA /* AddIngredientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddIngredientTableViewController.m; path = ../../Movies/AddIngredientTableViewController.m; sourceTree = "<group>"; };
 		F60A475BF6682CF7481F4E20 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +135,10 @@
 				D3749C3D1BAD716400F4C4C6 /* ExpiringIngredientCell.xib */,
 				22165A261BAD5A3B000C74CF /* IngreCategory.h */,
 				22165A271BAD5A3B000C74CF /* IngreCategory.m */,
+				841690FD1BAD6EB300869DAA /* AddIngredientTableViewController.h */,
+				841690FE1BAD6EB300869DAA /* AddIngredientTableViewController.m */,
+				22165A231BAD59DF000C74CF /* ManuReplenishTVC.h */,
+				22165A241BAD59DF000C74CF /* ManuReplenishTVC.m */,
 				841690FA1BAD411900869DAA /* IngredientsTableViewController.h */,
 				841690FB1BAD411900869DAA /* IngredientsTableViewController.m */,
 				841690F71BAD410900869DAA /* AddHandledIngredientTableViewController.h */,
@@ -364,6 +371,7 @@
 			files = (
 				841690C51BAD2E3F00869DAA /* AppDelegate.m in Sources */,
 				22165A281BAD5A3B000C74CF /* IngreCategory.m in Sources */,
+				841690FF1BAD6EB300869DAA /* AddIngredientTableViewController.m in Sources */,
 				22165A251BAD59DF000C74CF /* ManuReplenishTVC.m in Sources */,
 				841690C81BAD2E3F00869DAA /* TeamFive.xcdatamodeld in Sources */,
 				841690CB1BAD2E3F00869DAA /* ViewController.m in Sources */,
