@@ -25,6 +25,9 @@
 		841690F31BAD3FDE00869DAA /* SettingsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690F21BAD3FDE00869DAA /* SettingsCollectionViewController.m */; };
 		841690F91BAD410900869DAA /* AddHandledIngredientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690F81BAD410900869DAA /* AddHandledIngredientTableViewController.m */; };
 		841690FC1BAD411900869DAA /* IngredientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690FB1BAD411900869DAA /* IngredientsTableViewController.m */; };
+		BCB3D8682C9CC6A0ABF586E1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7914D675D126EA0814393205 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D3749C3E1BAD716400F4C4C6 /* ExpiringIngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3749C3D1BAD716400F4C4C6 /* ExpiringIngredientCell.xib */; };
+		D3749C441BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3749C431BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19154AB5A12BB5DD02A3B326 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		22165A231BAD59DF000C74CF /* ManuReplenishTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManuReplenishTVC.h; sourceTree = "<group>"; };
 		22165A241BAD59DF000C74CF /* ManuReplenishTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManuReplenishTVC.m; sourceTree = "<group>"; };
 		22165A261BAD5A3B000C74CF /* IngreCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngreCategory.h; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 		22165A351BAD6F03000C74CF /* IngredientPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientPickerCell.m; sourceTree = "<group>"; };
 		22165A371BAD6F56000C74CF /* PickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerCell.h; sourceTree = "<group>"; };
 		3006F5988E993F2E77F12841 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7914D675D126EA0814393205 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		841690BC1BAD2E3F00869DAA /* TeamFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841690C01BAD2E3F00869DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841690C11BAD2E3F00869DAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -73,6 +76,9 @@
 		841690F81BAD410900869DAA /* AddHandledIngredientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHandledIngredientTableViewController.m; sourceTree = "<group>"; };
 		841690FA1BAD411900869DAA /* IngredientsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientsTableViewController.h; sourceTree = "<group>"; };
 		841690FB1BAD411900869DAA /* IngredientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientsTableViewController.m; sourceTree = "<group>"; };
+		D3749C3D1BAD716400F4C4C6 /* ExpiringIngredientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpiringIngredientCell.xib; sourceTree = "<group>"; };
+		D3749C421BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpiringIngredientTableViewCell.h; sourceTree = "<group>"; };
+		D3749C431BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpiringIngredientTableViewCell.m; sourceTree = "<group>"; };
 		F60A475BF6682CF7481F4E20 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5543FC98214540D30B478096 /* libPods.a in Frameworks */,
+				BCB3D8682C9CC6A0ABF586E1 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +104,7 @@
 		0EC9A6CE1E0F370045668EC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				19154AB5A12BB5DD02A3B326 /* libPods.a */,
+				7914D675D126EA0814393205 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,6 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				22165A2A1BAD5F16000C74CF /* ManuReplenish */,
+				D3749C421BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.h */,
+				D3749C431BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m */,
+				D3749C3D1BAD716400F4C4C6 /* ExpiringIngredientCell.xib */,
 				22165A261BAD5A3B000C74CF /* IngreCategory.h */,
 				22165A271BAD5A3B000C74CF /* IngreCategory.m */,
 				841690FA1BAD411900869DAA /* IngredientsTableViewController.h */,
@@ -213,6 +222,7 @@
 				841690B91BAD2E3F00869DAA /* Frameworks */,
 				841690BA1BAD2E3F00869DAA /* Resources */,
 				528508BD93E5E14035270E72 /* Copy Pods Resources */,
+				744DD618CFBAC72C707D07BE /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,6 +295,7 @@
 			files = (
 				841690CE1BAD2E3F00869DAA /* Main.storyboard in Resources */,
 				841690D31BAD2E3F00869DAA /* LaunchScreen.xib in Resources */,
+				D3749C3E1BAD716400F4C4C6 /* ExpiringIngredientCell.xib in Resources */,
 				841690D01BAD2E3F00869DAA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +323,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		744DD618CFBAC72C707D07BE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D43D40A5BE64B4688AD93F21 /* Check Pods Manifest.lock */ = {
@@ -342,6 +368,7 @@
 				841690C81BAD2E3F00869DAA /* TeamFive.xcdatamodeld in Sources */,
 				841690CB1BAD2E3F00869DAA /* ViewController.m in Sources */,
 				841690ED1BAD303100869DAA /* SearchTableViewController.m in Sources */,
+				D3749C441BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m in Sources */,
 				841690FC1BAD411900869DAA /* IngredientsTableViewController.m in Sources */,
 				841690F91BAD410900869DAA /* AddHandledIngredientTableViewController.m in Sources */,
 				841690F31BAD3FDE00869DAA /* SettingsCollectionViewController.m in Sources */,
