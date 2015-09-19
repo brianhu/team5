@@ -7,9 +7,17 @@
 //
 
 #import "ManuReplenishTVC.h"
+#import "IngreCategory.h"
+#import "IngreCategoryPickerCell.h"
+#import "PickerCell.h"
+#import "IngredientPickerCell.h"
 
-@interface ManuReplenishTVC ()
+@interface ManuReplenishTVC () <PickerCell>
+@property (strong, nonatomic) IngreCategory *ingreCategory;
+@property (strong, nonatomic) NSString *categorySelected;
 
+@property (weak, nonatomic) IBOutlet IngreCategoryPickerCell *categoryCell;
+@property (weak, nonatomic) IBOutlet IngredientPickerCell *ingredientCell;
 @end
 
 @implementation ManuReplenishTVC
@@ -17,11 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.categoryCell.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,27 +33,57 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - setter & getter
+
+- (IngreCategory *)ingreCategory {
+    if (!_ingreCategory) {
+        _ingreCategory = [[IngreCategory alloc] init];
+    }
+    return _ingreCategory;
+}
+
+- (void)setCategorySelected:(NSString *)categorySelected {
+    _categorySelected = categorySelected;
+    self.ingredientCell.category = categorySelected;
+    NSLog(@"%@", self.ingredientCell.category);
+}
+
+#pragma mark - picker
+
+- (void)updateCategoryChosen:(IngreCategoryPickerCell *)ingreCategoryCell
+{
+    self.categorySelected = ingreCategoryCell.CategoryTextfield.text;
+//    NSLog(@"%@", self.categorySelected);
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 4;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    IngreCategoryPickerCell *cell = (IngreCategoryPickerCell *)[tableView dequeueReusableCellWithIdentifier:@"pickerCell" forIndexPath:indexPath];
+//    
+//    // Configure the cell...
+//    
+//    switch (indexPath.row) {
+//        case 0:
+//            break;
+//            
+//        default:
+//            break;
+//    }
+//    
+//    cell.delegate = self;
+//    return cell;
+//}
+
 
 /*
 // Override to support conditional editing of the table view.
