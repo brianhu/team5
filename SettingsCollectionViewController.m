@@ -7,6 +7,7 @@
 //
 
 #import "SettingsCollectionViewController.h"
+#import "IngredientsTableViewController.h"
 
 @interface SettingsCollectionViewController ()
 {
@@ -64,18 +65,15 @@ static NSString * const reuseIdentifier = @"Cell";
 
     cell.categoryImageViewCell.image = [UIImage imageNamed:[categoryImage objectAtIndex:indexPath.row]];
 
-
-//    NSLog(@"Cell: %@", cell);
-//    UIImageView *categoryImageView = (UIImageView *)[cell viewWithTag:500];
-//    NSInteger tag = cell.tag;
-//    NSLog(@"%ld",(long)tag);
-//    categoryImageView.image = [UIImage imageNamed:[categoryImage objectAtIndex:indexPath.row]];
-//    NSLog(@"%@", categoryImage);
-
     return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    IngredientsTableViewController *tmpView = [IngredientsTableViewController new];
+    [self.navigationController pushViewController:tmpView animated:YES];
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

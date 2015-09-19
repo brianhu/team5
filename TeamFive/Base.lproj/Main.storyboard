@@ -348,6 +348,9 @@
                                     <constraint firstAttribute="bottom" secondItem="rfK-1B-T31" secondAttribute="bottom" id="ps1-yc-qKL"/>
                                     <constraint firstItem="rfK-1B-T31" firstAttribute="top" secondItem="cth-sC-QbY" secondAttribute="top" id="qS6-Xv-MQ9"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="zPc-mQ-tTY" kind="push" identifier="" id="NS4-6f-omy"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -362,9 +365,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="zPc-mQ-tTY" kind="push" id="0Sq-qc-RSQ"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5G-aY-4C9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
