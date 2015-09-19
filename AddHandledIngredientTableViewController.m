@@ -1,18 +1,18 @@
 //
-//  SettingsTableViewController.m
+//  AddHandledIngredientTableViewController.m
 //  TeamFive
 //
 //  Created by yishain on 9/19/15.
 //  Copyright (c) 2015 yishain. All rights reserved.
 //
 
-#import "SettingsTableViewController.h"
+#import "AddHandledIngredientTableViewController.h"
 
-@interface SettingsTableViewController ()
+@interface AddHandledIngredientTableViewController ()
 
 @end
 
-@implementation SettingsTableViewController
+@implementation AddHandledIngredientTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

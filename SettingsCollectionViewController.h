@@ -1,5 +1,5 @@
 //
-//  SettingsTableViewController.h
+//  SettingsCollectionViewController.h
 //  TeamFive
 //
 //  Created by yishain on 9/19/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsTableViewController : UITableViewController
+@interface SettingsCollectionViewController : UICollectionViewController
 
 @end
