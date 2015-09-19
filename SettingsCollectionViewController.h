@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsCollectionViewCell.h"
 
 @interface SettingsCollectionViewController : UICollectionViewController
 
