@@ -14,12 +14,16 @@
 {
     self = [super init];
     if (self) {
-        self.totalCategory = [[NSMutableArray alloc] initWithArray: @[ @{@"name": @"tea", @"unit" : @"g"},
-                                                                       @{@"name": @"Beverage", @"unit" : @"ml"},
-                                                                       @{@"name": @"Fruit", @"unit" : @"g"},
-                                                                       @{@"name": @"Jam", @"unit" : @"ml"},
-                                                                       @{@"name": @"Bread", @"unit" : @"g"} ]];
+        self.totalCategory = [[NSMutableArray alloc] initWithArray: @[ @{@"name": @"茶葉", @"unit" : @"公克"},
+                                                                       @{@"name": @"飲料", @"unit" : @"毫升"},
+                                                                       @{@"name": @"水果", @"unit" : @"公克"},
+                                                                       @{@"name": @"果醬", @"unit" : @"毫升"},
+                                                                       @{@"name": @"麵包", @"unit" : @"公克"} ]];
     }
     return self;
+}
+
++ (NSString *)unitMap:(NSString *)category {
+    return @{@"茶葉": @"公克", @"飲料": @"毫升", @"水果": @"公克", @"果醬": @"毫升", @"麵包": @"公克"}[category];
 }
 @end

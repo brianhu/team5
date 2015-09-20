@@ -4,7 +4,7 @@
 use_frameworks!
 
 pod 'Parse'
-pod 'YLProgressBar', '~> 3.8.0'
+pod 'M13ProgressSuite'
 
 target 'TeamFiveTests' do
 

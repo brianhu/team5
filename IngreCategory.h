@@ -10,4 +10,5 @@
 
 @interface IngreCategory : NSObject
 @property (strong, nonatomic) NSMutableArray *totalCategory;
++ (NSString *)unitMap:(NSString *)category;
 @end

@@ -1,16 +1,16 @@
 PODS:
   - Bolts/Tasks (1.2.2)
+  - M13ProgressSuite (1.2.7)
   - Parse (1.8.5):
     - Bolts/Tasks (>= 1.2.2)
-  - YLProgressBar (3.8.0)
 
 DEPENDENCIES:
+  - M13ProgressSuite
   - Parse
-  - YLProgressBar (~> 3.8.0)
 
 SPEC CHECKSUMS:
   Bolts: 20a2bd788273360cb1e31530dc19b8544eef2544
+  M13ProgressSuite: 03d194af6359da440641ba758aed5a18b0386a86
   Parse: 17ad8e0677ed682f7f00503860fcda0f4eb74168
-  YLProgressBar: b6ec76bea4a1b8d6bdfd2995d828055a7e5f3e9a
 
 COCOAPODS: 0.38.2
