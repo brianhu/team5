@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AddHandledIngredientTableViewController : UITableViewController
-
+@property (weak, nonatomic) IBOutlet UITextField *handledFoods;
+@property (weak, nonatomic) IBOutlet UITextField *handledQuantity;
+@property (weak, nonatomic) IBOutlet UITextField *handledTime;
+@property NSString *handledUnitStr;
+@property NSString *handledObjectedID;
 @end

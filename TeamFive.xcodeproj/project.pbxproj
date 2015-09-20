@@ -11,7 +11,6 @@
 		22165A281BAD5A3B000C74CF /* IngreCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 22165A271BAD5A3B000C74CF /* IngreCategory.m */; };
 		22165A331BAD650D000C74CF /* IngreCategoryPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22165A321BAD650D000C74CF /* IngreCategoryPickerCell.m */; };
 		22165A361BAD6F03000C74CF /* IngredientPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22165A351BAD6F03000C74CF /* IngredientPickerCell.m */; };
-		5543FC98214540D30B478096 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19154AB5A12BB5DD02A3B326 /* libPods.a */; };
 		841690C21BAD2E3F00869DAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690C11BAD2E3F00869DAA /* main.m */; };
 		841690C51BAD2E3F00869DAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690C41BAD2E3F00869DAA /* AppDelegate.m */; };
 		841690C81BAD2E3F00869DAA /* TeamFive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 841690C61BAD2E3F00869DAA /* TeamFive.xcdatamodeld */; };
@@ -26,8 +25,9 @@
 		841690F91BAD410900869DAA /* AddHandledIngredientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690F81BAD410900869DAA /* AddHandledIngredientTableViewController.m */; };
 		841690FC1BAD411900869DAA /* IngredientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690FB1BAD411900869DAA /* IngredientsTableViewController.m */; };
 		BCB3D8682C9CC6A0ABF586E1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7914D675D126EA0814393205 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D368211D1BAE81D000DF70FA /* AddIngredientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D368211C1BAE81D000DF70FA /* AddIngredientTableViewController.m */; };
 		D3749C3E1BAD716400F4C4C6 /* ExpiringIngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3749C3D1BAD716400F4C4C6 /* ExpiringIngredientCell.xib */; };
-		D3749C441BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3749C431BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		D3749C441BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3749C431BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +76,8 @@
 		841690F81BAD410900869DAA /* AddHandledIngredientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHandledIngredientTableViewController.m; sourceTree = "<group>"; };
 		841690FA1BAD411900869DAA /* IngredientsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientsTableViewController.h; sourceTree = "<group>"; };
 		841690FB1BAD411900869DAA /* IngredientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientsTableViewController.m; sourceTree = "<group>"; };
+		D368211B1BAE81CA00DF70FA /* AddIngredientTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddIngredientTableViewController.h; sourceTree = "<group>"; };
+		D368211C1BAE81D000DF70FA /* AddIngredientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIngredientTableViewController.m; sourceTree = "<group>"; };
 		D3749C3D1BAD716400F4C4C6 /* ExpiringIngredientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpiringIngredientCell.xib; sourceTree = "<group>"; };
 		D3749C421BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpiringIngredientTableViewCell.h; sourceTree = "<group>"; };
 		D3749C431BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpiringIngredientTableViewCell.m; sourceTree = "<group>"; };
@@ -112,8 +114,6 @@
 		22165A2A1BAD5F16000C74CF /* ManuReplenish */ = {
 			isa = PBXGroup;
 			children = (
-				22165A231BAD59DF000C74CF /* ManuReplenishTVC.h */,
-				22165A241BAD59DF000C74CF /* ManuReplenishTVC.m */,
 				22165A311BAD650D000C74CF /* IngreCategoryPickerCell.h */,
 				22165A321BAD650D000C74CF /* IngreCategoryPickerCell.m */,
 				22165A341BAD6F03000C74CF /* IngredientPickerCell.h */,
@@ -132,6 +132,10 @@
 				D3749C3D1BAD716400F4C4C6 /* ExpiringIngredientCell.xib */,
 				22165A261BAD5A3B000C74CF /* IngreCategory.h */,
 				22165A271BAD5A3B000C74CF /* IngreCategory.m */,
+				D368211B1BAE81CA00DF70FA /* AddIngredientTableViewController.h */,
+				D368211C1BAE81D000DF70FA /* AddIngredientTableViewController.m */,
+				22165A231BAD59DF000C74CF /* ManuReplenishTVC.h */,
+				22165A241BAD59DF000C74CF /* ManuReplenishTVC.m */,
 				841690FA1BAD411900869DAA /* IngredientsTableViewController.h */,
 				841690FB1BAD411900869DAA /* IngredientsTableViewController.m */,
 				841690F71BAD410900869DAA /* AddHandledIngredientTableViewController.h */,
@@ -375,6 +379,7 @@
 				22165A331BAD650D000C74CF /* IngreCategoryPickerCell.m in Sources */,
 				841690C21BAD2E3F00869DAA /* main.m in Sources */,
 				841690EA1BAD301E00869DAA /* AddItemTableViewController.m in Sources */,
+				D368211D1BAE81D000DF70FA /* AddIngredientTableViewController.m in Sources */,
 				22165A361BAD6F03000C74CF /* IngredientPickerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,8 +510,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TeamFive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -516,8 +523,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TeamFive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

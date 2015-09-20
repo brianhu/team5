@@ -7,8 +7,17 @@
 //
 
 #import "AddHandledIngredientTableViewController.h"
-
+#import <Parse/Parse.h>
 @interface AddHandledIngredientTableViewController ()
+{
+    NSArray *addHandlesfoodArr;
+    NSMutableArray *allHandlesfoodArr;
+    NSString *handledfoodsStr;
+    NSString *handledQuantityStr;
+    NSString *handledTimestr;
+    NSString *Unit;
+    NSString *objectedID;
+}
 
 @end
 
@@ -16,12 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    Unit = self.handledUnitStr;
+    objectedID = self.handledObjectedID;
+    addHandlesfoodArr = [[NSArray alloc] init];
+    allHandlesfoodArr = [[NSMutableArray alloc] init];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,69 +40,59 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+
+    return 3;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (IBAction)addHandledFoodItems:(id)sender {
     
-    // Configure the cell...
+    handledfoodsStr = self.handledFoods.text;
+    handledQuantityStr = self.handledQuantity.text;
+    handledTimestr = self.handledTime.text;
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    f.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *foodQuantity = [f numberFromString:handledQuantityStr];
+    NSNumber *foodShelfLife = [f numberFromString:handledTimestr];
     
-    return cell;
+    NSLog(@"%@ %@ %@ %@",handledTimestr,foodQuantity,foodShelfLife,objectedID);
+    if (handledTimestr == nil || foodShelfLife ==nil || foodQuantity == nil || objectedID == nil) {
+        return;
+    }
+    
+    PFObject *handledIngredient = [PFObject objectWithClassName:@"HandledIngredient"];
+    handledIngredient[@"name"] = handledfoodsStr;
+    handledIngredient[@"shelfLife"] = foodShelfLife;
+    handledIngredient[@"quantity"] = foodQuantity;
+    NSLog(@"ID = %@",objectedID);
+    PFObject *pointer = [PFObject objectWithoutDataWithClassName:@"Ingredient" objectId:objectedID];
+    handledIngredient[@"ingredient"] = pointer;
+    [handledIngredient saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    
+    UIAlertController * alert=  [UIAlertController
+                                 alertControllerWithTitle:@"新增資料成功"
+                                 message:@"已新增一筆加工食材資料"
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * action) {
+        
+    }];
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
