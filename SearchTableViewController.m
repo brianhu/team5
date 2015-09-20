@@ -10,6 +10,7 @@
 #import "ExpiringIngredientTableViewCell.h"
 #import <Parse/Parse.h>
 #import "IngreCategory.h"
+#import "MBProgressHUD.h"
 
 @interface SearchTableViewController ()
 @property (strong, nonatomic) NSArray *ingredients;
@@ -22,9 +23,11 @@ NSString static *cellIdentifier = @"ExpiringCell";
     [super viewDidLoad];
     PFQuery *query = [PFQuery queryWithClassName:@"RawIngredient"];
     [query includeKey:@"ingredient"];
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         _ingredients = objects;
         [self.tableView reloadData];
+        [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
     }];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

@@ -54,10 +54,12 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-TeamFiveTests/Bolts.framework'
   install_framework 'Pods-TeamFiveTests/M13ProgressSuite.framework'
+  install_framework 'Pods-TeamFiveTests/MBProgressHUD.framework'
   install_framework 'Pods-TeamFiveTests/Parse.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-TeamFiveTests/Bolts.framework'
   install_framework 'Pods-TeamFiveTests/M13ProgressSuite.framework'
+  install_framework 'Pods-TeamFiveTests/MBProgressHUD.framework'
   install_framework 'Pods-TeamFiveTests/Parse.framework'
 fi

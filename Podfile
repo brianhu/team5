@@ -5,6 +5,7 @@ use_frameworks!
 
 pod 'Parse'
 pod 'M13ProgressSuite'
+pod 'MBProgressHUD', '~> 0.9.1'
 
 target 'TeamFiveTests' do
 
