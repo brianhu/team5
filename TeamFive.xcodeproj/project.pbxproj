@@ -23,8 +23,8 @@
 		841690F31BAD3FDE00869DAA /* SettingsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690F21BAD3FDE00869DAA /* SettingsCollectionViewController.m */; };
 		841690F91BAD410900869DAA /* AddHandledIngredientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690F81BAD410900869DAA /* AddHandledIngredientTableViewController.m */; };
 		841690FC1BAD411900869DAA /* IngredientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841690FB1BAD411900869DAA /* IngredientsTableViewController.m */; };
-		C19A2EBA1BAD63F500873645 /* SettingsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C19A2EB81BAD63F500873645 /* SettingsCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		C19A2EBB1BAD63F500873645 /* SettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C19A2EB91BAD63F500873645 /* SettingsCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C19A2EBA1BAD63F500873645 /* SettingsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C19A2EB81BAD63F500873645 /* SettingsCollectionViewCell.m */; };
+		C19A2EBB1BAD63F500873645 /* SettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C19A2EB91BAD63F500873645 /* SettingsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,10 +108,10 @@
 				22165A271BAD5A3B000C74CF /* IngreCategory.m */,
 				22165A231BAD59DF000C74CF /* ManuReplenishTVC.h */,
 				22165A241BAD59DF000C74CF /* ManuReplenishTVC.m */,
-				841690FA1BAD411900869DAA /* IngredientsTableViewController.h */,
-				841690FB1BAD411900869DAA /* IngredientsTableViewController.m */,
 				841690F71BAD410900869DAA /* AddHandledIngredientTableViewController.h */,
 				841690F81BAD410900869DAA /* AddHandledIngredientTableViewController.m */,
+				841690FA1BAD411900869DAA /* IngredientsTableViewController.h */,
+				841690FB1BAD411900869DAA /* IngredientsTableViewController.m */,
 				841690F11BAD3FDE00869DAA /* SettingsCollectionViewController.h */,
 				841690F21BAD3FDE00869DAA /* SettingsCollectionViewController.m */,
 				C19A2EB71BAD63F500873645 /* SettingsCollectionViewCell.h */,

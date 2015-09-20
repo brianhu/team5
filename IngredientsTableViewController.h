@@ -10,6 +10,4 @@
 
 @interface IngredientsTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
-//cell.imageView.image = [UIImage imageNamed: @"fruit"];
-
 @end
