@@ -59,6 +59,7 @@
     NSNumber *foodQuantity = [f numberFromString:handledQuantityStr];
     NSNumber *foodShelfLife = [f numberFromString:handledTimestr];
     
+    NSLog(@"%@ %@ %@ %@",handledTimestr,foodQuantity,foodShelfLife,objectedID);
     if (handledTimestr == nil || foodShelfLife ==nil || foodQuantity == nil || objectedID == nil) {
         return;
     }
