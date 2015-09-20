@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "IngreCategory.h"
 #import "MBProgressHUD.h"
+#import "EliminatingTableViewController.h"
 
 @interface SearchTableViewController ()
 @property (strong, nonatomic) NSArray *ingredients;
@@ -57,7 +58,10 @@ NSString static *cellIdentifier = @"ExpiringCell";
 - (void)splitIngredientIntoTwoArray:(NSArray *)originArray {
     
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+        [self.tableView reloadData];
+}
 - (NSInteger)calculateRemainLifeFrom:(NSDate *)createdDate ShelfLife:(NSInteger)shelfLife{
     
     NSInteger interval = [[NSDate date] timeIntervalSinceDate:createdDate] / 3600;
@@ -181,6 +185,17 @@ NSString static *cellIdentifier = @"ExpiringCell";
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSMutableArray *sender = indexPath.section == 0 ? _riskIngredients : _safeIngredients;
+    [self performSegueWithIdentifier:@"eliminatingSegue" sender:sender[indexPath.row]];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"eliminatingSegue"]) {
+        EliminatingTableViewController *eliminatingVC = segue.destinationViewController;
+        eliminatingVC.object = sender;
+    }
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

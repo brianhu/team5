@@ -28,6 +28,7 @@
 		D368211D1BAE81D000DF70FA /* AddIngredientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D368211C1BAE81D000DF70FA /* AddIngredientTableViewController.m */; };
 		D3749C3E1BAD716400F4C4C6 /* ExpiringIngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3749C3D1BAD716400F4C4C6 /* ExpiringIngredientCell.xib */; };
 		D3749C441BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3749C431BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m */; };
+		D3CD54FA1BAE8EEC00620D38 /* EliminatingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CD54F91BAE8EEC00620D38 /* EliminatingTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		D3749C3D1BAD716400F4C4C6 /* ExpiringIngredientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpiringIngredientCell.xib; sourceTree = "<group>"; };
 		D3749C421BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpiringIngredientTableViewCell.h; sourceTree = "<group>"; };
 		D3749C431BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpiringIngredientTableViewCell.m; sourceTree = "<group>"; };
+		D3CD54F81BAE8EEC00620D38 /* EliminatingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EliminatingTableViewController.h; sourceTree = "<group>"; };
+		D3CD54F91BAE8EEC00620D38 /* EliminatingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EliminatingTableViewController.m; sourceTree = "<group>"; };
 		F60A475BF6682CF7481F4E20 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +129,8 @@
 		841690B31BAD2E3F00869DAA = {
 			isa = PBXGroup;
 			children = (
+				D3CD54F81BAE8EEC00620D38 /* EliminatingTableViewController.h */,
+				D3CD54F91BAE8EEC00620D38 /* EliminatingTableViewController.m */,
 				22165A2A1BAD5F16000C74CF /* ManuReplenish */,
 				D3749C421BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.h */,
 				D3749C431BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m */,
@@ -372,6 +377,7 @@
 				841690C81BAD2E3F00869DAA /* TeamFive.xcdatamodeld in Sources */,
 				841690CB1BAD2E3F00869DAA /* ViewController.m in Sources */,
 				841690ED1BAD303100869DAA /* SearchTableViewController.m in Sources */,
+				D3CD54FA1BAE8EEC00620D38 /* EliminatingTableViewController.m in Sources */,
 				D3749C441BAD7C1300F4C4C6 /* ExpiringIngredientTableViewCell.m in Sources */,
 				841690FC1BAD411900869DAA /* IngredientsTableViewController.m in Sources */,
 				841690F91BAD410900869DAA /* AddHandledIngredientTableViewController.m in Sources */,
