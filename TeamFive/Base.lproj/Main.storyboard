@@ -322,15 +322,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="貨存清單" id="pBT-Gv-2Wm">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Cql-97-br2">
+                        <barButtonItem key="rightBarButtonItem" title="進新貨品" style="plain" id="Cql-97-br2">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="l1a-yT-YGW">
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="進新貨品"/>
+                                <connections>
+                                    <segue destination="b8P-zX-5hg" kind="push" id="zsY-SL-oWB"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="b8P-zX-5hg" kind="push" id="fk9-1d-qf6"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
