@@ -88,6 +88,7 @@ NSString static *cellIdentifier = @"ExpiringCell";
         // NSLog(@"%@", replenishVC.ingredientSelectedID);
     }
     
+    replenishVC.ingredientSelected = senderCell.nameLabel.text;
     replenishVC.ingredientCell.IngredientTextfield.text = senderCell.nameLabel.text;
     [self.navigationController pushViewController:replenishVC animated:YES];
 }
