@@ -24,36 +24,43 @@
 
 #pragma mark - setter & getter
 
-
+//@synthesize pickerOptions = _pickerOptions;
 - (NSMutableArray *)pickerOptions
 {
     if (!_pickerOptions) {
         _pickerOptions = [[NSMutableArray alloc] init];
         
         PFQuery *query = [PFQuery queryWithClassName:@"Ingredient"];
-        [query whereKey:@"category" equalTo: self.category];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            if (!error) {
-                
-                // The find succeeded.
-                for (PFObject *object in objects) {
-                    [_ingredientOptions addObject: @{@"name" : object[@"name"],
-                                                       @"id" : object.objectId } ];
+        
+        if (self.category) {
+            [query whereKey:@"category" equalTo: self.category];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                if (!error) {
+                    
+                    // The find succeeded.
+                    for (PFObject *object in objects) {
+                        [_ingredientOptions addObject: @{@"name" : object[@"name"],
+                                                         @"id" : object.objectId } ];
+                    }
+                    
+                    if (objects.count > 0) {
+                        for (NSDictionary *ingredient in self.ingredientOptions) {
+                            [_pickerOptions addObject: ingredient[@"name"]];
+                        }
+                    }else{
+                        [_pickerOptions addObject:@"無"];
+                    }
+                    
+                    [self.picker reloadAllComponents];
+                    
+                } else {
+                    // Log details of the failure
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
                 }
-                
-                for (NSDictionary *ingredient in self.ingredientOptions) {
-                    [_pickerOptions addObject: ingredient[@"name"]];
-                }
-                [self.picker reloadAllComponents];
-                
-            } else {
-                // Log details of the failure
-                NSLog(@"Error: %@ %@", error, [error userInfo]);
-            }
-        }];
-        
-        
-        
+            }];
+        }else{
+            
+        }
     }
     
     return _pickerOptions;

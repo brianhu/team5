@@ -35,11 +35,6 @@
     self.ingredientCell.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - setter & getter
 
 - (IngreCategory *)ingreCategory {
@@ -51,6 +46,8 @@
 
 - (void)setCategorySelected:(NSString *)categorySelected {
     _categorySelected = categorySelected;
+    
+    self.ingredientCell.IngredientTextfield.enabled = YES;
     self.ingredientCell.category = categorySelected;
 }
 
@@ -174,6 +171,7 @@
             // There was a problem, check error.description
         }
     }];
+    [self.view endEditing:YES];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
