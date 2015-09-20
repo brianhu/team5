@@ -7,15 +7,19 @@
 //
 
 #import "IngredientsTableViewController.h"
+#import <Parse.h>
 
 @interface IngredientsTableViewController ()
+{
+    NSArray *Ingredients;
+    NSDictionary *dictParseData;
+    NSMutableArray *mutebleArrayParseData;
+}
 
 @end
 
 @implementation IngredientsTableViewController
-{
-    NSArray *Ingredients;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,6 +31,10 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    [self fetchParseIngredients];
+
+    [self.tableView reloadData];
 }
 
 
@@ -37,18 +45,51 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return Ingredients.count;
+    return [mutebleArrayParseData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:
 (NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.textLabel.text = [Ingredients objectAtIndex:indexPath.row];
+//    cell.textLabel.text = [Ingredients objectAtIndex:indexPath.row];
+
+    NSDictionary *tmpDict = [mutebleArrayParseData objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSMutableString stringWithFormat:@"%@", [tmpDict objectForKey:@"name"]];
+    NSLog(@"tableview ==== %@", [tmpDict objectForKey:@"name"]);
     return cell;
 }
 
+#pragma mark - Fetch Parse Data
+- (void)fetchParseIngredients {
+    PFQuery *query = [PFQuery queryWithClassName:@"Ingredient"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu data.", (unsigned long)objects.count);
+            // Do something with the found objects
 
+            NSLog(@"%@", dictParseData);
+            dictParseData = (NSDictionary*)objects;
+            mutebleArrayParseData = [NSMutableArray new];
+            for (NSDictionary *object in dictParseData) {
+                [mutebleArrayParseData addObject:object];
+                [self.tableView reloadData];
+            }
+
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+//    [query getObjectInBackgroundWithId:@"kq9YYdK2j5" block:^(PFObject *aaa, NSError *error) {
+//        // Do something with the returned PFObject in the gameScore variable.
+//        NSLog(@"%@", aaa);
+//
+//        self.dictParseData = (NSDictionary *)aaa;
+//        NSLog(@"%@", self.dictParseData);
+//    }];
+}
 
 
 /*
