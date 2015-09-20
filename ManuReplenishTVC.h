@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IngreCategoryPickerCell.h"
+#import "IngredientPickerCell.h"
 
 @interface ManuReplenishTVC : UITableViewController
+@property (strong, nonatomic) NSString *categorySelected;
+@property (strong, nonatomic) NSString *ingredientSelected;
+@property (strong, nonatomic) NSString *ingredientSelectedID;
 
+@property (strong, nonatomic) IBOutlet IngreCategoryPickerCell *categoryCell;
+@property (weak, nonatomic) IBOutlet IngredientPickerCell *ingredientCell;
 @end

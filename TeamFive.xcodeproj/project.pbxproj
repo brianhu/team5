@@ -117,6 +117,8 @@
 		22165A2A1BAD5F16000C74CF /* ManuReplenish */ = {
 			isa = PBXGroup;
 			children = (
+				22165A231BAD59DF000C74CF /* ManuReplenishTVC.h */,
+				22165A241BAD59DF000C74CF /* ManuReplenishTVC.m */,
 				22165A311BAD650D000C74CF /* IngreCategoryPickerCell.h */,
 				22165A321BAD650D000C74CF /* IngreCategoryPickerCell.m */,
 				22165A341BAD6F03000C74CF /* IngredientPickerCell.h */,
@@ -139,8 +141,6 @@
 				22165A271BAD5A3B000C74CF /* IngreCategory.m */,
 				D368211B1BAE81CA00DF70FA /* AddIngredientTableViewController.h */,
 				D368211C1BAE81D000DF70FA /* AddIngredientTableViewController.m */,
-				22165A231BAD59DF000C74CF /* ManuReplenishTVC.h */,
-				22165A241BAD59DF000C74CF /* ManuReplenishTVC.m */,
 				841690FA1BAD411900869DAA /* IngredientsTableViewController.h */,
 				841690FB1BAD411900869DAA /* IngredientsTableViewController.m */,
 				841690F71BAD410900869DAA /* AddHandledIngredientTableViewController.h */,
