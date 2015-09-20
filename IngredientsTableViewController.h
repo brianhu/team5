@@ -10,4 +10,5 @@
 
 @interface IngredientsTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property NSInteger Num;
 @end

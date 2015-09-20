@@ -7,17 +7,21 @@
 //
 
 #import "IngredientsTableViewController.h"
+#import "SettingsCollectionViewController.h"
 #import <Parse.h>
 
 @interface IngredientsTableViewController ()
 {
-    NSArray *Ingredients;
+    NSArray *ingredientsOrder;
     NSDictionary *dictParseData;
     NSMutableArray *mutebleArrayParseData;
 
     NSMutableString *dataName;
     NSMutableString *dataPrice;
     NSMutableString *dataShelfLife;
+
+    NSString *tableTitle;
+    NSInteger ingreNum;
 }
 
 @end
@@ -27,20 +31,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    ingreNum = self.Num;
     
-    Ingredients = @[@"Tea", @"Baverage", @"Fruit", @"Jam", @"Bread", @"Snacks"];
-    //Dates = @[@"date"];
+    ingredientsOrder = @[@"茶葉", @"飲料", @"水果", @"果醬", @"麵包", @"點心"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
+    self.title = @"食材保鮮度清單";
+
     [self fetchParseIngredients];
 
     [self.tableView reloadData];
 }
 
+#pragma mark - Fetch Parse Data
+- (void)fetchParseIngredients {
+    PFQuery *query = [PFQuery queryWithClassName:@"Ingredient"];
+    [query whereKey:@"category" equalTo:ingredientsOrder[ingreNum]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu data.", (unsigned long)objects.count);
+            // Do something with the found objects
+            dictParseData = (NSDictionary*)objects;
+            mutebleArrayParseData = [NSMutableArray new];
+            for (NSDictionary *object in dictParseData) {
+                [mutebleArrayParseData addObject:object];
+                [self.tableView reloadData];
+            }
+
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
 
 #pragma mark - Table view data source
 
@@ -63,6 +91,7 @@
     dataPrice = [NSMutableString stringWithFormat:@"%@", [tmpDict objectForKey:@"price"]];
     dataShelfLife = [NSMutableString stringWithFormat:@"%@", [tmpDict objectForKey:@"shelfLife"]];
 
+
     UILabel *labelName = (UILabel *)[cell viewWithTag:100];
     labelName.text = dataName;
     UILabel *labelPrice = (UILabel *)[cell viewWithTag:200];
@@ -73,34 +102,6 @@
     return cell;
 }
 
-#pragma mark - Fetch Parse Data
-- (void)fetchParseIngredients {
-    PFQuery *query = [PFQuery queryWithClassName:@"Ingredient"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu data.", (unsigned long)objects.count);
-            // Do something with the found objects
-            dictParseData = (NSDictionary*)objects;
-            mutebleArrayParseData = [NSMutableArray new];
-            for (NSDictionary *object in dictParseData) {
-                [mutebleArrayParseData addObject:object];
-                [self.tableView reloadData];
-            }
-
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-//    [query getObjectInBackgroundWithId:@"kq9YYdK2j5" block:^(PFObject *aaa, NSError *error) {
-//        // Do something with the returned PFObject in the gameScore variable.
-//        NSLog(@"%@", aaa);
-//
-//        self.dictParseData = (NSDictionary *)aaa;
-//        NSLog(@"%@", self.dictParseData);
-//    }];
-}
 
 
 /*

@@ -22,7 +22,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    categoryImage = @[@"category_food.jpg", @"category_food.jpg", @"category_food.jpg", @"category_food.jpg", @"category_food.jpg", @"category_food.jpg"];
+    categoryImage = @[@"category_tea.jpg", @"category_baverage.jpg", @"category_fruit.jpg", @"category_jam.jpg", @"category_bread.jpg", @"category_snacks.jpg"];
 
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -32,6 +32,7 @@ static NSString * const reuseIdentifier = @"Cell";
 //    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
 
     // Do any additional setup after loading the view.
+    self.collectionView.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,8 +73,19 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDelegate>
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    IngredientsTableViewController *tmpView = [IngredientsTableViewController new];
-    [self.navigationController pushViewController:tmpView animated:YES];
+//    IngredientsTableViewController *tmpView = [IngredientsTableViewController new];
+//    [self.navigationController pushViewController:tmpView animated:YES];
+//    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+
+    [self performSegueWithIdentifier:@"ingredientSegue" sender:indexPath];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ingredientSegue"]) {
+        IngredientsTableViewController *ingreVC = segue.destinationViewController;
+        NSIndexPath *indexPath = sender;
+        ingreVC.Num = indexPath.row;
+    }
 }
 
 /*

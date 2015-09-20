@@ -10,5 +10,4 @@
 #import "SettingsCollectionViewCell.h"
 
 @interface SettingsCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
-
 @end
