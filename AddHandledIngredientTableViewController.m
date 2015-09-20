@@ -81,7 +81,7 @@
     
     UIAlertController * alert=  [UIAlertController
                                  alertControllerWithTitle:@"新增資料成功"
-                                 message:@"您已新增一筆食材資料"
+                                 message:@"已新增一筆加工食材資料"
                                  preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * action) {
         
