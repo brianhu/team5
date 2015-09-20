@@ -50,20 +50,6 @@
 }
 
 - (IBAction)addHandledFoodItems:(id)sender {
-    UIAlertController * alert=  [UIAlertController
-                                 alertControllerWithTitle:@"新增資料成功"
-                                 message:@"您已新增一筆食材資料"
-                                 preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * action) {
-        
-    }];
-    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        [alert dismissViewControllerAnimated:YES completion:nil];
-    }];
-    
-    [alert addAction:ok];
-    [alert addAction:cancel];
-    [self presentViewController:alert animated:YES completion:nil];
     
     handledfoodsStr = self.handledFoods.text;
     handledQuantityStr = self.handledQuantity.text;
@@ -73,6 +59,9 @@
     NSNumber *foodQuantity = [f numberFromString:handledQuantityStr];
     NSNumber *foodShelfLife = [f numberFromString:handledTimestr];
     
+    if (handledTimestr == nil || foodShelfLife ==nil || foodQuantity == nil || objectedID == nil) {
+        return;
+    }
     
     PFObject *handledIngredient = [PFObject objectWithClassName:@"HandledIngredient"];
     handledIngredient[@"name"] = handledfoodsStr;
@@ -88,6 +77,21 @@
             // There was a problem, check error.description
         }
     }];
+    
+    UIAlertController * alert=  [UIAlertController
+                                 alertControllerWithTitle:@"新增資料成功"
+                                 message:@"您已新增一筆食材資料"
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * action) {
+        
+    }];
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
