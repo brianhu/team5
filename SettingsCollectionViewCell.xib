@@ -8,28 +8,38 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SettingsCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+            <rect key="frame" x="0.0" y="0.0" width="137" height="137"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                <rect key="frame" x="0.0" y="0.0" width="137" height="137"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow" translatesAutoresizingMaskIntoConstraints="NO" id="KlE-qm-n6s">
+                        <rect key="frame" x="0.0" y="0.0" width="137" height="137"/>
+                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sU2-wE-ua2">
-                        <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                        <rect key="frame" x="2" y="0.0" width="133" height="133"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
                 <constraint firstItem="sU2-wE-ua2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2A9-XM-B82"/>
-                <constraint firstAttribute="trailing" secondItem="sU2-wE-ua2" secondAttribute="trailing" id="31b-OU-W3c"/>
-                <constraint firstAttribute="bottom" secondItem="sU2-wE-ua2" secondAttribute="bottom" id="NKJ-bL-AWq"/>
-                <constraint firstItem="sU2-wE-ua2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VmZ-BP-X0Q"/>
+                <constraint firstAttribute="trailing" secondItem="sU2-wE-ua2" secondAttribute="trailing" constant="2" id="31b-OU-W3c"/>
+                <constraint firstAttribute="bottom" secondItem="KlE-qm-n6s" secondAttribute="bottom" id="FwJ-mA-sQK"/>
+                <constraint firstAttribute="bottom" secondItem="sU2-wE-ua2" secondAttribute="bottom" constant="4" id="NKJ-bL-AWq"/>
+                <constraint firstItem="KlE-qm-n6s" firstAttribute="leading" secondItem="sU2-wE-ua2" secondAttribute="leading" constant="-2" id="RhS-LN-t0g"/>
+                <constraint firstItem="sU2-wE-ua2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="VmZ-BP-X0Q"/>
+                <constraint firstAttribute="trailing" secondItem="KlE-qm-n6s" secondAttribute="trailing" id="wvK-a4-eCt"/>
+                <constraint firstItem="KlE-qm-n6s" firstAttribute="top" secondItem="sU2-wE-ua2" secondAttribute="top" id="xX6-3P-2Xu"/>
             </constraints>
-            <size key="customSize" width="125" height="125"/>
+            <size key="customSize" width="137" height="137"/>
             <connections>
                 <outlet property="categoryImageViewCell" destination="sU2-wE-ua2" id="Co4-sc-nFo"/>
             </connections>
-            <point key="canvasLocation" x="300.5" y="277.5"/>
+            <point key="canvasLocation" x="306.5" y="283.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="shadow" width="180" height="180"/>
+    </resources>
 </document>
