@@ -14,6 +14,10 @@
     NSArray *Ingredients;
     NSDictionary *dictParseData;
     NSMutableArray *mutebleArrayParseData;
+
+    NSMutableString *dataName;
+    NSMutableString *dataPrice;
+    NSMutableString *dataShelfLife;
 }
 
 @end
@@ -55,8 +59,17 @@
 //    cell.textLabel.text = [Ingredients objectAtIndex:indexPath.row];
 
     NSDictionary *tmpDict = [mutebleArrayParseData objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSMutableString stringWithFormat:@"%@", [tmpDict objectForKey:@"name"]];
-    NSLog(@"tableview ==== %@", [tmpDict objectForKey:@"name"]);
+    dataName = [NSMutableString stringWithFormat:@"%@", [tmpDict objectForKey:@"name"]];
+    dataPrice = [NSMutableString stringWithFormat:@"%@", [tmpDict objectForKey:@"price"]];
+    dataShelfLife = [NSMutableString stringWithFormat:@"%@", [tmpDict objectForKey:@"shelfLife"]];
+
+    UILabel *labelName = (UILabel *)[cell viewWithTag:100];
+    labelName.text = dataName;
+    UILabel *labelPrice = (UILabel *)[cell viewWithTag:200];
+    labelPrice.text = dataPrice;
+    UILabel *labelShelfLife = (UILabel *)[cell viewWithTag:300];
+    labelShelfLife.text = dataShelfLife;
+
     return cell;
 }
 
@@ -68,8 +81,6 @@
             // The find succeeded.
             NSLog(@"Successfully retrieved %lu data.", (unsigned long)objects.count);
             // Do something with the found objects
-
-            NSLog(@"%@", dictParseData);
             dictParseData = (NSDictionary*)objects;
             mutebleArrayParseData = [NSMutableArray new];
             for (NSDictionary *object in dictParseData) {
