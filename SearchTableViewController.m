@@ -11,6 +11,8 @@
 #import <Parse/Parse.h>
 #import "IngreCategory.h"
 #import "MBProgressHUD.h"
+#import "ManuReplenishTVC.h"
+#import "ExpiringIngredientTableViewCell.h"
 
 @interface SearchTableViewController ()
 @property (strong, nonatomic) NSArray *ingredients;
@@ -52,10 +54,41 @@ NSString static *cellIdentifier = @"ExpiringCell";
     }];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ExpiringIngredientCell" bundle:nil] forCellReuseIdentifier:cellIdentifier];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toDetailVC:) name:@"replenishButPress" object:nil];
 }
 
-- (void)splitIngredientIntoTwoArray:(NSArray *)originArray {
+- (void)toDetailVC:(NSNotification *)notificaiton {
     
+    NSDictionary *info = [notificaiton userInfo];
+    
+    ExpiringIngredientTableViewCell *senderCell = info [@"id"];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:senderCell];
+    
+    ManuReplenishTVC *replenishVC = (ManuReplenishTVC *)[self.storyboard instantiateViewControllerWithIdentifier:@"replenishDetailVC"];
+    __unused UIView *view = replenishVC.view;
+    
+    if (indexPath.section == 0) {
+        PFObject *rawIngredient = self.riskIngredients[indexPath.row];
+        replenishVC.categorySelected = rawIngredient[@"category"];
+        replenishVC.categoryCell.CategoryTextfield.text = rawIngredient[@"category"];
+        
+        PFObject *ingredient = rawIngredient[@"ingredient"];
+        replenishVC.ingredientSelectedID = ingredient.objectId;
+        // NSLog(@"%@", replenishVC.ingredientSelectedID);
+    }else {
+        PFObject *rawIngredient = self.safeIngredients[indexPath.row];
+        replenishVC.categorySelected = rawIngredient[@"category"];
+        replenishVC.categoryCell.CategoryTextfield.text = rawIngredient[@"category"];
+        
+        PFObject *ingredient = rawIngredient[@"ingredient"];
+        replenishVC.ingredientSelectedID = ingredient.objectId;
+        // NSLog(@"%@", replenishVC.ingredientSelectedID);
+    }
+    
+    replenishVC.ingredientCell.IngredientTextfield.text = senderCell.nameLabel.text;
+    [self.navigationController pushViewController:replenishVC animated:YES];
 }
 
 - (NSInteger)calculateRemainLifeFrom:(NSDate *)createdDate ShelfLife:(NSInteger)shelfLife{

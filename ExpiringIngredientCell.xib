@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vgB-Qo-9n1" id="GMk-L3-3Zf">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQd-6r-679">
@@ -48,6 +50,17 @@
                             <constraint firstAttribute="height" constant="12" id="QKc-Jx-qnb"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBE-Pp-U7x">
+                        <rect key="frame" x="228" y="3" width="84" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="84" id="Uhy-tG-fAe"/>
+                            <constraint firstAttribute="height" constant="30" id="VnE-U1-6W1"/>
+                        </constraints>
+                        <state key="normal" title="進貨"/>
+                        <connections>
+                            <action selector="replenishButton:" destination="vgB-Qo-9n1" eventType="touchUpInside" id="Jo9-Wt-D8l"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="sIY-FF-9Bx" firstAttribute="top" secondItem="Gr9-p6-Sny" secondAttribute="bottom" constant="8" id="48v-j5-fP1"/>
@@ -63,6 +76,8 @@
                     <constraint firstItem="sIY-FF-9Bx" firstAttribute="top" secondItem="2KB-fG-NMD" secondAttribute="bottom" constant="8" id="m4E-fo-WPX"/>
                     <constraint firstItem="nQd-6r-679" firstAttribute="top" secondItem="GMk-L3-3Zf" secondAttribute="top" constant="8" id="rHQ-z2-tky"/>
                     <constraint firstItem="nQd-6r-679" firstAttribute="leading" secondItem="GMk-L3-3Zf" secondAttribute="leading" constant="8" id="ug8-WZ-kfO"/>
+                    <constraint firstItem="CBE-Pp-U7x" firstAttribute="trailing" secondItem="GMk-L3-3Zf" secondAttribute="trailingMargin" id="vQt-Ma-KGW"/>
+                    <constraint firstItem="CBE-Pp-U7x" firstAttribute="centerY" secondItem="nQd-6r-679" secondAttribute="centerY" id="zyx-72-Vvv"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

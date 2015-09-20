@@ -23,4 +23,10 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)replenishButton:(UIButton *)sender {
+    
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"replenishButPress" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"replenishButPress" object:self userInfo:@{ @"id" : self }];
+}
+
 @end

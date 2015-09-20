@@ -8,22 +8,18 @@
 
 #import "ManuReplenishTVC.h"
 #import "IngreCategory.h"
-#import "IngreCategoryPickerCell.h"
 #import "PickerCell.h"
-#import "IngredientPickerCell.h"
 #import "Parse/Parse.h"
 
 @interface ManuReplenishTVC () <PickerCell>
 @property (strong, nonatomic) IngreCategory *ingreCategory;
-@property (strong, nonatomic) NSString *categorySelected;
-@property (strong, nonatomic) NSString *ingredientSelected;
-@property (strong, nonatomic) NSString *ingredientSelectedID;
+
+
 @property (weak, nonatomic) IBOutlet UITextField *priceTextField;
 @property (weak, nonatomic) IBOutlet UITextField *numberTextField;
 @property (weak, nonatomic) IBOutlet UILabel *unitLabel;
 
-@property (weak, nonatomic) IBOutlet IngreCategoryPickerCell *categoryCell;
-@property (weak, nonatomic) IBOutlet IngredientPickerCell *ingredientCell;
+
 @end
 
 @implementation ManuReplenishTVC
@@ -167,6 +163,7 @@
         if (succeeded) {
             // The object has been saved.
             NSLog(@"Saving to Parse successfully");
+            [self.navigationController popViewControllerAnimated:YES];
         } else {
             // There was a problem, check error.description
         }
